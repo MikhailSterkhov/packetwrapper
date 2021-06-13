@@ -3,6 +3,7 @@ package org.stonlexx.packetwrapper.api.packet;
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.events.PacketContainer;
+import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;

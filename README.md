@@ -11,6 +11,7 @@
 
 | Версия игры | Статус выполнения |
 |------------|-------------------|
+| API        | ✅                 |
 | 1.15       | ✅                 |
 | 1.13       | ⛔                 |
 | 1.12       | ⛔                 |
@@ -18,3 +19,21 @@
 | 1.10       | ⛔                 |
 | 1.9        | ⛔                 |
 | 1.8        | ⛔                 |
+
+
+Пример создания, обработки и отсылания пакетов:
+
+```java
+// Создание пакета.
+WrapperPlayServerAnimation serverAnimationPacket = PacketWrapper.getInstance().createPlayServerAnimation();
+
+// Обработка и установка необходимых данных.
+serverAnimationPacket.setEntityID(1);
+serverAnimationPacket.setAnimation(1);
+
+// Отправление пакета всем игрокам онлайн.
+serverAnimationPacket.broadcastPacket();
+
+// Отправление пакета определенному игроку.
+serverAnimationPacket.sendPacket(player);
+```

@@ -1,8 +1,9 @@
 package org.stonlexx.packetwrapper.api.packet.client;
 
 import com.comphenix.protocol.PacketType;
+import org.stonlexx.packetwrapper.api.packet.WrapperPacket;
 
-public interface WrapperHandshakingClientSetProtocol {
+public interface WrapperHandshakingClientSetProtocol extends WrapperPacket {
     PacketType TYPE = PacketType.Handshake.Client.SET_PROTOCOL;
 
 

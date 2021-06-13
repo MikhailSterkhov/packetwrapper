@@ -6,6 +6,10 @@ import lombok.NonNull;
 import org.bukkit.entity.Player;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperHandshakingClientSetProtocol;
+import org.stonlexx.packetwrapper.api.packet.client.WrapperLoginClientCustomPayload;
+import org.stonlexx.packetwrapper.api.packet.client.WrapperLoginClientEncryptionBegin;
+import org.stonlexx.packetwrapper.api.packet.client.WrapperLoginClientStart;
+import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerAnimation;
 
 public interface PacketWrapper {
 
@@ -19,6 +23,18 @@ public interface PacketWrapper {
     WrapperHandshakingClientSetProtocol createHandshakingClientSetProtocol();
     WrapperHandshakingClientSetProtocol createHandshakingClientSetProtocol(@NonNull PacketContainer packetContainer);
 
+    WrapperLoginClientCustomPayload createLoginClientCustomPayload();
+    WrapperLoginClientCustomPayload createLoginClientCustomPayload(@NonNull PacketContainer packetContainer);
+
+    WrapperLoginClientEncryptionBegin createLoginClientEncryptionBegin();
+    WrapperLoginClientEncryptionBegin createLoginClientEncryptionBegin(@NonNull PacketContainer packetContainer);
+
+    WrapperLoginClientStart createLoginClientStart();
+    WrapperLoginClientStart createLoginClientStart(@NonNull PacketContainer packetContainer);
+
+    WrapperPlayServerAnimation createPlayServerAnimation();
+    WrapperPlayServerAnimation createPlayServerAnimation(@NonNull PacketContainer packetContainer);
+
 
 
     default void sendPacket(@NonNull Player player, @NonNull MinecraftPacket packet) {
@@ -30,7 +46,8 @@ public interface PacketWrapper {
     }
 
     default MinecraftPacket createPacket(@NonNull PacketType packetType) {
-        return new MinecraftPacket(packetType) { };
+        return new MinecraftPacket(packetType) {
+        };
     }
 
     default MinecraftPacket clonePacket(@NonNull MinecraftPacket minecraftPacket) {
