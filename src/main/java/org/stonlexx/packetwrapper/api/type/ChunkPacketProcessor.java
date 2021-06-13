@@ -14,15 +14,54 @@ public interface ChunkPacketProcessor {
     int BIOME_ARRAY_LENGTH = 256;
 
 
+    void process(ChunkletProcessor processor);
+
+    int getSkylightCount();
+
+    int getOffset(int nibbles);
+
+    void translate(ChunkletProcessor processor);
+
+    boolean isChunkLoaded(World world, int x, int z);
+
+
+    interface ChunkletProcessor {
+        /**
+         * Process a given chunklet (16x16x16).
+         *
+         * @param origin  - the block with the lowest x, y and z coordinate in
+         *                the chunklet.
+         * @param data    - the data array.
+         * @param offsets - the offsets with the data for the given chunklet.
+         */
+        void processChunklet(Location origin, byte[] data,
+                             ChunkOffsets offsets);
+
+        /**
+         * Process the biome array for a chunk (16x256x16).
+         * <p>
+         * This method will not be called if the chunk is missing biome
+         * information.
+         *
+         * @param origin     - the block with the lowest x, y and z coordinate in
+         *                   the chunk.
+         * @param data       - the data array.
+         * @param biomeIndex - the starting index of the biome data (256 bytes
+         *                   in lenght).
+         */
+        void processBiomeArray(Location origin, byte[] data,
+                               int biomeIndex);
+    }
+
     class ChunkOffsets {
+        private final int lightOffset;
         private int blockIdOffset;
         private int dataOffset;
-        private final int lightOffset;
         private int skylightOffset;
         private int extraOffset;
 
         public ChunkOffsets(int blockIdOffset, int dataOffset,
-                             int lightOffset, int skylightOffset, int extraOffset) {
+                            int lightOffset, int skylightOffset, int extraOffset) {
             this.blockIdOffset = blockIdOffset;
             this.dataOffset = dataOffset;
             this.lightOffset = lightOffset;
@@ -125,44 +164,5 @@ public interface ChunkPacketProcessor {
             return extraOffset > 0;
         }
     }
-
-    interface ChunkletProcessor {
-        /**
-         * Process a given chunklet (16x16x16).
-         *
-         * @param origin - the block with the lowest x, y and z coordinate in
-         *        the chunklet.
-         * @param data - the data array.
-         * @param offsets - the offsets with the data for the given chunklet.
-         */
-        void processChunklet(Location origin, byte[] data,
-                             ChunkOffsets offsets);
-
-        /**
-         * Process the biome array for a chunk (16x256x16).
-         * <p>
-         * This method will not be called if the chunk is missing biome
-         * information.
-         *
-         * @param origin - the block with the lowest x, y and z coordinate in
-         *        the chunk.
-         * @param data - the data array.
-         * @param biomeIndex - the starting index of the biome data (256 bytes
-         *        in lenght).
-         */
-        void processBiomeArray(Location origin, byte[] data,
-                               int biomeIndex);
-    }
-
-
-    void process(ChunkletProcessor processor);
-
-    int getSkylightCount();
-
-    int getOffset(int nibbles);
-
-    void translate(ChunkletProcessor processor);
-
-    boolean isChunkLoaded(World world, int x, int z);
 
 }

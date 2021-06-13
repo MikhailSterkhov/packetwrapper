@@ -1,131 +1,129 @@
 package org.stonlexx.packetwrapper.api.packet.server;
 
+import com.comphenix.protocol.PacketType;
+import com.comphenix.protocol.events.PacketEvent;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
-
-import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.WrapperPacket;
-import com.comphenix.protocol.events.PacketEvent;
 
 public interface WrapperPlayServerRelEntityMoveLook extends WrapperPacket {
- PacketType TYPE =
-			PacketType.Play.Server.REL_ENTITY_MOVE_LOOK;
+    PacketType TYPE =
+            PacketType.Play.Server.REL_ENTITY_MOVE_LOOK;
 
 
-	/**
-	 * Retrieve Entity ID.
-	 * <p>
-	 * Notes: entity's ID
-	 * 
-	 * @return The current Entity ID
-	 */
- int getEntityID();
+    /**
+     * Retrieve Entity ID.
+     * <p>
+     * Notes: entity's ID
+     *
+     * @return The current Entity ID
+     */
+    int getEntityID();
 
-	/**
-	 * Set Entity ID.
-	 * 
-	 * @param value - new value.
-	 */
- void setEntityID(int value);
+    /**
+     * Set Entity ID.
+     *
+     * @param value - new value.
+     */
+    void setEntityID(int value);
 
-	/**
-	 * Retrieve the entity of the painting that will be spawned.
-	 * 
-	 * @param world - the current world of the entity.
-	 * @return The spawned entity.
-	 */
- Entity getEntity(World world);
+    /**
+     * Retrieve the entity of the painting that will be spawned.
+     *
+     * @param world - the current world of the entity.
+     * @return The spawned entity.
+     */
+    Entity getEntity(World world);
 
-	/**
-	 * Retrieve the entity of the painting that will be spawned.
-	 * 
-	 * @param event - the packet event.
-	 * @return The spawned entity.
-	 */
- Entity getEntity(PacketEvent event);
+    /**
+     * Retrieve the entity of the painting that will be spawned.
+     *
+     * @param event - the packet event.
+     * @return The spawned entity.
+     */
+    Entity getEntity(PacketEvent event);
 
-	/**
-	 * Retrieve DX.
-	 * 
-	 * @return The current DX
-	 */
- double getDx();
+    /**
+     * Retrieve DX.
+     *
+     * @return The current DX
+     */
+    double getDx();
 
-	/**
-	 * Set DX.
-	 *
-	 * @param value - new value.
-	 */
- void setDx(double value);
+    /**
+     * Set DX.
+     *
+     * @param value - new value.
+     */
+    void setDx(double value);
 
-	/**
-	 * Retrieve DY.
-	 *
-	 * @return The current DY
-	 */
- double getDy();
+    /**
+     * Retrieve DY.
+     *
+     * @return The current DY
+     */
+    double getDy();
 
-	/**
-	 * Set DY.
-	 *
-	 * @param value - new value.
-	 */
- void setDy(double value);
+    /**
+     * Set DY.
+     *
+     * @param value - new value.
+     */
+    void setDy(double value);
 
-	/**
-	 * Retrieve DZ.
-	 *
-	 * @return The current DZ
-	 */
- double getDz();
+    /**
+     * Retrieve DZ.
+     *
+     * @return The current DZ
+     */
+    double getDz();
 
-	/**
-	 * Set DZ.
-	 *
-	 * @param value - new value.
-	 */
- void setDz(double value);
+    /**
+     * Set DZ.
+     *
+     * @param value - new value.
+     */
+    void setDz(double value);
 
-	/**
-	 * Retrieve the yaw of the current entity.
-	 * 
-	 * @return The current Yaw
-	 */
- float getYaw();
+    /**
+     * Retrieve the yaw of the current entity.
+     *
+     * @return The current Yaw
+     */
+    float getYaw();
 
-	/**
-	 * Set the yaw of the current entity.
-	 * 
-	 * @param value - new yaw.
-	 */
- void setYaw(float value);
+    /**
+     * Set the yaw of the current entity.
+     *
+     * @param value - new yaw.
+     */
+    void setYaw(float value);
 
-	/**
-	 * Retrieve the pitch of the current entity.
-	 * 
-	 * @return The current pitch
-	 */
- float getPitch();
+    /**
+     * Retrieve the pitch of the current entity.
+     *
+     * @return The current pitch
+     */
+    float getPitch();
 
-	/**
-	 * Set the pitch of the current entity.
-	 * 
-	 * @param value - new pitch.
-	 */
- void setPitch(float value);
+    /**
+     * Set the pitch of the current entity.
+     *
+     * @param value - new pitch.
+     */
+    void setPitch(float value);
 
-	/**
-	 * Retrieve On Ground.
-	 * 
-	 * @return The current On Ground
-	 */
- boolean getOnGround();
+    /**
+     * Retrieve On Ground.
+     *
+     * @return The current On Ground
+     */
+    boolean getOnGround();
 
-	/**
-	 * Set On Ground.
-	 * 
-	 * @param value - new value.
-	 */
- void setOnGround(boolean value);
+    /**
+     * Set On Ground.
+     *
+     * @param value - new value.
+     */
+    void setOnGround(boolean value);
 }

@@ -5,8 +5,8 @@ import org.stonlexx.packetwrapper.api.packet.WrapperPacket;
 
 public interface WrapperPlayClientRecipeDisplayed extends WrapperPacket {
     PacketType TYPE = PacketType.Play.Client.RECIPE_DISPLAYED;
-    
-    
+
+
     Status getStatus();
 
     void setStatus(Status value);

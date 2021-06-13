@@ -1,4 +1,4 @@
-package org.stonlex.packetwrapper.v1_15.packet.client;
+package org.stonlexx.packetwrapper.v1_15.packet.client;
 
 import com.comphenix.protocol.PacketType.Protocol;
 import com.comphenix.protocol.events.PacketContainer;

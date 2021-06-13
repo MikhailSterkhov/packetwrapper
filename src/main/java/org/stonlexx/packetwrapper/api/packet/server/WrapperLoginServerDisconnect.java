@@ -22,9 +22,7 @@ public interface WrapperLoginServerDisconnect extends WrapperPacket {
      */
     void setReason(WrappedChatComponent value);
 
-    @Deprecated
     WrappedChatComponent getJsonData();
 
-    @Deprecated
     void setJsonData(WrappedChatComponent value);
 }

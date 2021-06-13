@@ -1,27 +1,26 @@
 package org.stonlexx.packetwrapper.api.packet.client;
 
-import java.util.UUID;
-
 import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.WrapperPacket;
 
+import java.util.UUID;
+
 public interface WrapperPlayClientSpectate extends WrapperPacket {
- PacketType TYPE = PacketType.Play.Client.SPECTATE;
+    PacketType TYPE = PacketType.Play.Client.SPECTATE;
 
 
-	/**
-	 * Retrieve Target Player.
-	 * 
-	 * @return The current Target Player
-	 */
- UUID getTargetPlayer();
+    /**
+     * Retrieve Target Player.
+     *
+     * @return The current Target Player
+     */
+    UUID getTargetPlayer();
 
-	/**
-	 * Set Target Player.
-	 * 
-	 * @param value - new value.
-	 */
- void setTargetPlayer(UUID value);
+    /**
+     * Set Target Player.
+     *
+     * @param value - new value.
+     */
+    void setTargetPlayer(UUID value);
 
 }
