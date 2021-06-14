@@ -1,6 +1,8 @@
 package org.stonlexx.packetwrapper.v1_15.packet.server;
 
 import com.comphenix.protocol.events.PacketContainer;
+import com.comphenix.protocol.wrappers.EnumWrappers;
+import org.bukkit.Particle;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerWorldParticles;
 
@@ -24,8 +26,8 @@ public class WrapperPlayServerWorldParticles1_15
 	 * 
 	 * @return The current particle
 	 */
-	public WrappedParticle getParticle() {
-		return container.getNewParticles().read(0);
+	public Particle getParticle() {
+		return container.getNewParticles().read(0).getParticle();
 	}
 
 	/**
@@ -33,8 +35,8 @@ public class WrapperPlayServerWorldParticles1_15
 	 * 
 	 * @param value - new value.
 	 */
-	public void setParticleType(WrappedParticle value) {
-		container.getNewParticles().write(0, value);
+	public void setParticleType(Particle value) {
+		container.getNewParticles().write(0, WrappedParticle.create(value, null));
 	}
 
 	/**

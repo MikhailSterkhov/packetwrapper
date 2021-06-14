@@ -1,7 +1,7 @@
 package org.stonlexx.packetwrapper.api.packet.server;
 
 import com.comphenix.protocol.PacketType;
-import com.comphenix.protocol.wrappers.WrappedParticle;
+import org.bukkit.Particle;
 import org.stonlexx.packetwrapper.api.packet.WrapperPacket;
 
 public interface WrapperPlayServerWorldParticles extends WrapperPacket {
@@ -14,14 +14,14 @@ public interface WrapperPlayServerWorldParticles extends WrapperPacket {
      *
      * @return The current particle
      */
-    WrappedParticle getParticle();
+    Particle getParticle();
 
     /**
      * Set the particle.
      *
      * @param value - new value.
      */
-    void setParticleType(WrappedParticle value);
+    void setParticleType(Particle value);
 
     /**
      * Retrieve X.

@@ -26,9 +26,8 @@ public final class PacketWrapperPlugin
         }
 
         getLogger().log(Level.INFO, ChatColor.YELLOW + String.format("Version detected: 1.%s", packetWrapper.getVersionMinor()));
-        getLogger().log(Level.INFO, ChatColor.GREEN + "Load mappings & wrappers...");
+        getLogger().log(Level.INFO, ChatColor.YELLOW + "Loading mappings & wrappers...");
     }
-
 
     public static PacketWrapper getWrapperByVersion(int versionMinor) {
         if (versionMinor <= 7) {
