@@ -4,8 +4,6 @@ import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientBoatMove;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientBoatMove;
-
 public class WrapperPlayClientBoatMove1_15
 		extends MinecraftPacket
 		implements WrapperPlayClientBoatMove {

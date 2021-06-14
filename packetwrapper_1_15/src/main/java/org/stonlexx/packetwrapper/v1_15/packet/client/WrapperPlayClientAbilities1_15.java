@@ -4,8 +4,6 @@ import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientAbilities;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientAbilities;
-
 public class WrapperPlayClientAbilities1_15
 		extends MinecraftPacket
 		implements WrapperPlayClientAbilities {

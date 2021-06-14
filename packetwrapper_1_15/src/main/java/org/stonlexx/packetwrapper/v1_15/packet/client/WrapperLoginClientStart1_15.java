@@ -5,8 +5,6 @@ import com.comphenix.protocol.wrappers.WrappedGameProfile;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperLoginClientStart;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperLoginClientStart;
-
 public class WrapperLoginClientStart1_15
 		extends MinecraftPacket
 		implements WrapperLoginClientStart {

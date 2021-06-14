@@ -4,8 +4,6 @@ import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperLoginServerCustomPayload;
 
-import org.stonlexx.packetwrapper.api.packet.server.WrapperLoginServerCustomPayload;
-
 public class WrapperLoginServerCustomPayload1_15 
         extends MinecraftPacket
         implements WrapperLoginServerCustomPayload {

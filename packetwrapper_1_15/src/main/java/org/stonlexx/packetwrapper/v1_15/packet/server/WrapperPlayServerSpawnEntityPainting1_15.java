@@ -3,7 +3,6 @@ package org.stonlexx.packetwrapper.v1_15.packet.server;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
-import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerSpawnEntityPainting;
@@ -91,13 +90,5 @@ public class WrapperPlayServerSpawnEntityPainting1_15
 
 	public void setDirection(Direction value) {
 		container.getDirections().write(0, value);
-	}
-
-	public int getPaintingId() {
-		return container.getIntegers().read(0);
-	}
-
-	public void setPaintingId(int value) {
-		container.getIntegers().write(0, value);
 	}
 }

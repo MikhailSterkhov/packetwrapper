@@ -4,8 +4,6 @@ import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperLoginClientEncryptionBegin;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperLoginClientEncryptionBegin;
-
 public class WrapperLoginClientEncryptionBegin1_15
 		extends MinecraftPacket
 		implements WrapperLoginClientEncryptionBegin {

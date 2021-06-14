@@ -7,8 +7,6 @@ import org.bukkit.entity.Entity;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerAttachEntity;
 
-import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerAttachEntity;
-
 public class WrapperPlayServerAttachEntity1_15
 		extends MinecraftPacket
 		implements WrapperPlayServerAttachEntity {

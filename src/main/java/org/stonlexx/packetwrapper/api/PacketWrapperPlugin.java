@@ -17,7 +17,7 @@ public final class PacketWrapperPlugin
         MinecraftVersion currentVersion = MinecraftVersion.getCurrentVersion();
         int currentMinor = currentVersion.getMinor();
 
-        packetWrapper = getPacketWrapper(currentMinor);
+        packetWrapper = getWrapperByVersion(currentMinor);
 
         if (packetWrapper == null) {
             getLogger().log(Level.WARNING, ChatColor.RED + "Plugin no found version to mapping!");
@@ -25,29 +25,26 @@ public final class PacketWrapperPlugin
             return;
         }
 
-        getLogger().log(Level.INFO, ChatColor.GREEN + String.format("Detect version 1.%s. Load mappings & wrappers...", packetWrapper.getVersionMinor()));
+        getLogger().log(Level.INFO, ChatColor.YELLOW + String.format("Version detected: 1.%s", packetWrapper.getVersionMinor()));
+        getLogger().log(Level.INFO, ChatColor.GREEN + "Load mappings & wrappers...");
     }
 
 
-    private PacketWrapper getPacketWrapper(int versionMinor) {
-        if (versionMinor <= 0) {
+    public static PacketWrapper getWrapperByVersion(int versionMinor) {
+        if (versionMinor <= 7) {
             return null;
         }
 
         PacketWrapper packetWrapper = ((PacketWrapper) getWrapperInstance(versionMinor));
 
         if (packetWrapper == null) {
-            if (versionMinor >= 7) {
-                return getPacketWrapper(versionMinor + 1);
-            }
-
-            packetWrapper = getPacketWrapper(versionMinor - 1);
+            packetWrapper = getWrapperByVersion(versionMinor - 1);
         }
 
         return packetWrapper;
     }
 
-    private Object getWrapperInstance(int versionMinor) {
+    private static Object getWrapperInstance(int versionMinor) {
         try {
             String classPath = String.format("org.stonlexx.packetwrapper.v1_%s.PacketWrapper1_%s",
                     versionMinor, versionMinor);
@@ -55,7 +52,6 @@ public final class PacketWrapperPlugin
             return Class.forName(classPath).newInstance();
 
         } catch (Exception exception) {
-
             return null;
         }
     }

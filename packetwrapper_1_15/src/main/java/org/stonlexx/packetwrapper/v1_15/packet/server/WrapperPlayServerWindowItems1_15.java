@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.bukkit.inventory.ItemStack;
 
-import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerWindowItems;

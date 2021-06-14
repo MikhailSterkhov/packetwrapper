@@ -6,7 +6,6 @@ import java.util.List;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
-import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import com.comphenix.protocol.events.PacketContainer;

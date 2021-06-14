@@ -2,7 +2,6 @@ package org.stonlexx.packetwrapper.v1_15.packet.server;
 
 import java.util.Arrays;
 
-import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerChat;

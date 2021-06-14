@@ -3,17 +3,63 @@ package org.stonlexx.packetwrapper.v1_15;
 import com.comphenix.protocol.events.PacketContainer;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.SneakyThrows;
 import org.bukkit.entity.Entity;
+import org.reflections.Reflections;
+import org.reflections.scanners.ResourcesScanner;
+import org.reflections.scanners.SubTypesScanner;
+import org.reflections.util.ClasspathHelper;
+import org.reflections.util.ConfigurationBuilder;
+import org.reflections.util.FilterBuilder;
 import org.stonlexx.packetwrapper.api.PacketWrapper;
+import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
+import org.stonlexx.packetwrapper.api.packet.WrapperPacket;
 import org.stonlexx.packetwrapper.api.packet.client.*;
 import org.stonlexx.packetwrapper.api.packet.server.*;
 import org.stonlexx.packetwrapper.v1_15.packet.client.*;
 import org.stonlexx.packetwrapper.v1_15.packet.server.*;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+
 public final class PacketWrapper1_15 implements PacketWrapper {
+
+// ================================================================================================================== //
 
     @Getter
     private final int versionMinor = 15;
+
+// ================================================================================================================== //
+
+
+    @Override
+    public <T extends WrapperPacket> T findPacketByClass(@NonNull Class<T> packetClass) {
+        return findPacketByClass(packetClass.getSimpleName());
+    }
+
+    @SneakyThrows
+    @SuppressWarnings("all")
+    @Override
+    public <T extends WrapperPacket> T findPacketByClass(@NonNull String packetClassName) {
+        List<ClassLoader> classLoadersList = new LinkedList<>();
+
+        classLoadersList.add(ClasspathHelper.contextClassLoader());
+        classLoadersList.add(ClasspathHelper.staticClassLoader());
+
+        Reflections reflections = new Reflections(new ConfigurationBuilder()
+                .setUrls(ClasspathHelper.forClassLoader(classLoadersList.toArray(new ClassLoader[0])))
+
+                .setScanners(new SubTypesScanner(false), new ResourcesScanner())
+                .filterInputsBy(new FilterBuilder().include(FilterBuilder.prefix("org.stonlexx.packetwrapper.v1_15.packet"))));
+
+        Set<Class<? extends MinecraftPacket>> classSet = reflections.getSubTypesOf(MinecraftPacket.class);
+
+        return (T) classSet.stream().filter(packetClass -> packetClass.getName().contains(packetClassName)).findFirst().orElse(null)
+                .getConstructor().newInstance();
+    }
+
+// ================================================================================================================== //
 
     @Override
     public WrapperHandshakingClientSetProtocol createHandshakingClientSetProtocol() {

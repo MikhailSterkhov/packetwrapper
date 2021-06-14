@@ -5,8 +5,6 @@ import com.comphenix.protocol.wrappers.EnumWrappers.Hand;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientBlockPlace;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientBlockPlace;
-
 public class WrapperPlayClientBlockPlace1_15
 		extends MinecraftPacket
 		implements WrapperPlayClientBlockPlace {

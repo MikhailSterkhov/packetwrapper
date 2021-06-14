@@ -4,8 +4,6 @@ import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientArmAnimation;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientArmAnimation;
-
 public class WrapperPlayClientArmAnimation1_15
 		extends MinecraftPacket
 		implements WrapperPlayClientArmAnimation {

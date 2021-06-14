@@ -7,8 +7,6 @@ import com.comphenix.protocol.wrappers.EnumWrappers.PlayerDigType;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientBlockDig;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientBlockDig;
-
 public class WrapperPlayClientBlockDig1_15
 		extends MinecraftPacket
 		implements WrapperPlayClientBlockDig {

@@ -64,8 +64,4 @@ public interface WrapperPlayServerSpawnEntityPainting extends WrapperPacket {
     Direction getDirection();
 
     void setDirection(Direction value);
-
-    int getPaintingId();
-
-    void setPaintingId(int value);
 }

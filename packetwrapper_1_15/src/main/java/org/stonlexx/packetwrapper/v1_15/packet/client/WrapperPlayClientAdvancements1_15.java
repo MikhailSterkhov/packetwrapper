@@ -5,8 +5,6 @@ import com.comphenix.protocol.wrappers.MinecraftKey;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientAdvancements;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientAdvancements;
-
 public class WrapperPlayClientAdvancements1_15
         extends MinecraftPacket
         implements WrapperPlayClientAdvancements {

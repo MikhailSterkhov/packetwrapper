@@ -14,6 +14,19 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>dmulloy2-repo</id>
+            <url>https://repo.dmulloy2.net/repository/public/</url>
+        </repository>
+
+        <repository>
+            <id>minecraft-libraries</id>
+            <name>Minecraft Libraries</name>
+            <url>https://libraries.minecraft.net</url>
+        </repository>
+    </repositories>
+
     <build>
         <finalName>${project.name}</finalName>
         <plugins>
@@ -54,7 +67,7 @@
         <dependency>
             <groupId>com.comphenix.protocol</groupId>
             <artifactId>ProtocolLib</artifactId>
-            <version>4.5.0</version>
+            <version>4.6.0</version>
             <scope>provided</scope>
         </dependency>
 
@@ -69,13 +82,6 @@
             <groupId>com.mojang</groupId>
             <artifactId>brigadier</artifactId>
             <version>1.0.17</version>
-            <scope>compile</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.reflections</groupId>
-            <artifactId>reflections</artifactId>
-            <version>0.9.12</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

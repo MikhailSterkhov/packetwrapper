@@ -6,6 +6,7 @@ import lombok.NonNull;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
+import org.stonlexx.packetwrapper.api.packet.WrapperPacket;
 import org.stonlexx.packetwrapper.api.packet.client.*;
 import org.stonlexx.packetwrapper.api.packet.server.*;
 
@@ -16,6 +17,11 @@ public interface PacketWrapper {
     }
 
     int getVersionMinor();
+
+    <T extends WrapperPacket> T findPacketByClass(@NonNull Class<T> packetClass);
+
+    <T extends WrapperPacket> T findPacketByClass(@NonNull String packetClassName);
+
 
     WrapperHandshakingClientSetProtocol createHandshakingClientSetProtocol();
     WrapperHandshakingClientSetProtocol createHandshakingClientSetProtocol(@NonNull PacketContainer packetContainer);

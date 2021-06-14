@@ -3,7 +3,6 @@ package org.stonlexx.packetwrapper.v1_15.packet.server;
 import org.bukkit.World;
 import org.bukkit.entity.Entity;
 
-import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerBed;

@@ -4,8 +4,6 @@ import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientBeacon;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientBeacon;
-
 public class WrapperPlayClientBeacon1_15
         extends MinecraftPacket
         implements WrapperPlayClientBeacon {

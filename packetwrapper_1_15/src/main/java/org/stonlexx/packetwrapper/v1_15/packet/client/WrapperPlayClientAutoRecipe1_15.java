@@ -4,8 +4,6 @@ import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientAutoRecipe;
 
-import org.stonlexx.packetwrapper.api.packet.client.WrapperPlayClientAutoRecipe;
-
 public class WrapperPlayClientAutoRecipe1_15
         extends MinecraftPacket
         implements WrapperPlayClientAutoRecipe {

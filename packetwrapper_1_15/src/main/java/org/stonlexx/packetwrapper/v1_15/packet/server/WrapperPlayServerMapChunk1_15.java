@@ -2,13 +2,11 @@ package org.stonlexx.packetwrapper.v1_15.packet.server;
 
 import java.util.List;
 
-import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerMapChunk;
 
 import com.comphenix.protocol.wrappers.nbt.NbtBase;
-import com.comphenix.protocol.wrappers.nbt.NbtCompound;
 
 public class WrapperPlayServerMapChunk1_15 
         extends MinecraftPacket

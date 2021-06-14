@@ -1,0 +1,10 @@
+name: packetwrapper
+main: org.stonlexx.packetwrapper.api.PacketWrapperPlugin
+version: 1.0
+author: ItzStonlex
+
+api-version: 1.13
+website: https://github.com/ItzStonlex/packetwrapper
+
+depend:
+  - ProtocolLib
