@@ -1,7 +1,8 @@
-package org.stonlex.packetwrapper.v1_15;
+package org.stonlexx.packetwrapper.v1_15;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import com.comphenix.protocol.reflect.StructureModifier;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

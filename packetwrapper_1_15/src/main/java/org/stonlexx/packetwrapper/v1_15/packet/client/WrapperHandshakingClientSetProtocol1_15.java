@@ -5,6 +5,8 @@ import com.comphenix.protocol.events.PacketContainer;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.client.WrapperHandshakingClientSetProtocol;
 
+import org.stonlexx.packetwrapper.api.packet.client.WrapperHandshakingClientSetProtocol;
+
 public class WrapperHandshakingClientSetProtocol1_15
 		extends MinecraftPacket
 		implements WrapperHandshakingClientSetProtocol {
