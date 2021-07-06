@@ -2,7 +2,6 @@ package org.stonlexx.packetwrapper.api.packet.server;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.reflect.IntEnum;
-import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import org.stonlexx.packetwrapper.api.packet.WrapperPacket;
 
 public interface WrapperPlayServerScoreboardObjective extends WrapperPacket {
@@ -31,14 +30,14 @@ public interface WrapperPlayServerScoreboardObjective extends WrapperPacket {
      *
      * @return The current Objective value
      */
-    WrappedChatComponent getDisplayName();
+    String getDisplayName();
 
     /**
      * Set Objective DisplayName.
      *
      * @param value - new value.
      */
-    void setDisplayName(WrappedChatComponent value);
+    void setDisplayName(String value);
 
     /**
      * Retrieve health display.

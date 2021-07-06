@@ -49,8 +49,8 @@ public class WrapperPlayServerScoreboardTeam1_12
 	 * 
 	 * @return The current Team Display Name
 	 */
-	public WrappedChatComponent getDisplayName() {
-		return WrappedChatComponent.fromText(container.getStrings().read(1));
+	public String getDisplayName() {
+		return container.getStrings().read(1);
 	}
 
 	/**
@@ -58,8 +58,8 @@ public class WrapperPlayServerScoreboardTeam1_12
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDisplayName(WrappedChatComponent value) {
-		container.getStrings().write(1, value.toString());
+	public void setDisplayName(String value) {
+		container.getStrings().write(1, value);
 	}
 
 	/**

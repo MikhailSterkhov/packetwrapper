@@ -2,6 +2,7 @@ package org.stonlexx.packetwrapper.api;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
+import com.google.gson.JsonParser;
 import lombok.NonNull;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -11,6 +12,8 @@ import org.stonlexx.packetwrapper.api.packet.client.*;
 import org.stonlexx.packetwrapper.api.packet.server.*;
 
 public interface PacketWrapper {
+
+    JsonParser JSON_PARSER = new JsonParser();
 
     static PacketWrapper getInstance() {
         return PacketWrapperPlugin.packetWrapper;

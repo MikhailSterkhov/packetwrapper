@@ -34,14 +34,14 @@ public interface WrapperPlayServerScoreboardTeam extends WrapperPacket {
      *
      * @return The current Team Display Name
      */
-    WrappedChatComponent getDisplayName();
+    String getDisplayName();
 
     /**
      * Set Team Display Name.
      *
      * @param value - new value.
      */
-    void setDisplayName(WrappedChatComponent value);
+    void setDisplayName(String value);
 
     /**
      * Retrieve Team Prefix.

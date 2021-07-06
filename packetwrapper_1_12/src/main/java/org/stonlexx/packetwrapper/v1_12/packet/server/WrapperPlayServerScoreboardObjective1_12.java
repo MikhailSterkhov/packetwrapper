@@ -1,7 +1,6 @@
 package org.stonlexx.packetwrapper.v1_12.packet.server;
 
 import com.comphenix.protocol.events.PacketContainer;
-import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerScoreboardObjective;
 
@@ -45,8 +44,8 @@ public class WrapperPlayServerScoreboardObjective1_12
 	 * 
 	 * @return The current Objective value
 	 */
-	public WrappedChatComponent getDisplayName() {
-		return WrappedChatComponent.fromText(container.getStrings().read(1));
+	public String getDisplayName() {
+		return container.getStrings().read(1);
 	}
 
 	/**
@@ -54,8 +53,8 @@ public class WrapperPlayServerScoreboardObjective1_12
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDisplayName(WrappedChatComponent value) {
-		container.getStrings().write(1, value.toString());
+	public void setDisplayName(String value) {
+		container.getStrings().write(1, value);
 	}
 
 	/**

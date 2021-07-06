@@ -4,6 +4,7 @@ import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.utility.MinecraftReflection;
 import com.comphenix.protocol.wrappers.WrappedChatComponent;
 import org.bukkit.ChatColor;
+import org.stonlexx.packetwrapper.api.PacketWrapper;
 import org.stonlexx.packetwrapper.api.packet.MinecraftPacket;
 import org.stonlexx.packetwrapper.api.packet.server.WrapperPlayServerScoreboardTeam;
 
@@ -50,8 +51,8 @@ public class WrapperPlayServerScoreboardTeam1_15
 	 * 
 	 * @return The current Team Display Name
 	 */
-	public WrappedChatComponent getDisplayName() {
-		return container.getChatComponents().read(0);
+	public String getDisplayName() {
+		return PacketWrapper.JSON_PARSER.parse(container.getChatComponents().read(0).getJson()).getAsJsonObject().get("text").getAsString();
 	}
 
 	/**
@@ -59,8 +60,8 @@ public class WrapperPlayServerScoreboardTeam1_15
 	 * 
 	 * @param value - new value.
 	 */
-	public void setDisplayName(WrappedChatComponent value) {
-		container.getChatComponents().write(0, value);
+	public void setDisplayName(String value) {
+		container.getChatComponents().write(0, WrappedChatComponent.fromText(value));
 	}
 
 	/**

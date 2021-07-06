@@ -17,6 +17,7 @@ public final class PacketWrapperPlugin
         MinecraftVersion currentVersion = MinecraftVersion.getCurrentVersion();
         int currentMinor = currentVersion.getMinor();
 
+        getLogger().log(Level.INFO, ChatColor.GREEN + "Detected version " + currentVersion.toString() + ", search mappings...");
         packetWrapper = getWrapperByVersion(currentMinor);
 
         if (packetWrapper == null) {
